@@ -1,37 +1,43 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react";
+import styled from "styled-components";
 
-const Album = () => {
-    return (
-        <Main>
-            <img src="/ksg.png" alt="ksg" />
-            <Title>Kids See Ghosts</Title>
-            <Artist>Kanye West & Kid Cudi</Artist>
-        </Main>
-    )
-}
+const Album = ({ album }) => {
+  return (
+    <Main>
+      <Cover src={album.album_cover} alt="ksg" />
+      <Title>{album.album_title}</Title>
+      <Artist>{album.artist}</Artist>
+    </Main>
+  );
+};
 
-export default Album
+export default Album;
 
 const Main = styled.div`
-    width: 15vw;
-    background-color: #272727;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    border-radius: 1rem;
-    padding: 20px;
-`
+  width: 15vw;
+  background-color: #272727;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 1rem;
+  padding: 20px;
+  margin: 2vh 2vw;
+`;
+const Cover = styled.img`
+  border-radius: 0.5rem;
+`;
 
 const Title = styled.span`
-    margin-top: 10px;
-    font-weight: 700;
-    font-size: 1.2vw;
-    color: #FBFBFB;
-    `
-    
-    const Artist = styled.span`
-    margin-top: 6px;
-    color: #B3B3B3;
+  margin-top: 14px;
+  font-weight: 700;
+  font-size: 1.3vw;
+  color: #fbfbfb;
+`;
+
+const Artist = styled.span`
+  margin-top: 6px;
+  color: #b3b3b3;
+  &:hover {
     text-decoration: underline;
-`
+  }
+`;
